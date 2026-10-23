@@ -1,0 +1,319 @@
+/* Living Science / Phase 2 hero. Homepage only; shared components are not redefined.
+   Motion principle: slow, soft, continuous. No flashing, no fast loops, no large movement. */
+html.living-science{--ls-night:#041e36;--ls-mint:#bdeedd;--ls-mint-2:#a8dfcd;--ls-paper:#f6f7f2;--ls-ease:cubic-bezier(.22,1,.36,1)}
+.living-science body{overflow-x:clip}
+
+/* ---------- Header (unchanged behaviour, active link underline added) ---------- */
+html.living-science .header,html.living-science .header.sm-glass-header{height:100px;background:var(--ls-night);border-bottom:1px solid #b9e6d718;box-shadow:none}
+html.living-science .header .nav{height:100%;gap:24px;transition:transform .35s ease}
+html.living-science .header .brand img.header-logo{width:190px;height:60px;object-fit:contain;object-position:left center}
+.living-science .header .brand-tag{font-size:8px;letter-spacing:.11em}
+.living-science .header .navlinks{gap:28px}
+.living-science .header .navlinks>a[aria-current="page"]{position:relative}
+.living-science .header .navlinks>a[aria-current="page"]:after{content:'';position:absolute;left:0;right:0;bottom:-8px;height:2px;background:var(--ls-mint);border-radius:2px;transform-origin:left;animation:hx-grow .9s .5s var(--ls-ease) both}
+.living-science .header .navlinks>.button{border:1px solid #91c9bd80;background:#b9e6d70b;border-radius:2px;padding:13px 20px;transition:background .3s ease,border-color .3s ease}
+.living-science .header .navlinks>.button:hover{background:#b9e6d71f;border-color:#b9e6d7}
+html.living-science .header.sm-header-scrolled{background:rgba(4,30,54,.94);border-bottom-color:#9bc9c42b;box-shadow:0 8px 22px #001a2b18;transform:translateY(-12px)}
+html.living-science .header.sm-header-scrolled .nav{transform:translateY(6px)}
+@supports(backdrop-filter:blur(12px)){html.living-science .header.sm-header-scrolled{background:rgba(4,30,54,.86);backdrop-filter:blur(18px)}}
+html.living-science .header{transition:transform .35s ease,background .35s ease,border-color .35s ease}
+
+/* ---------- Hero shell ---------- */
+.living-science .living-hero{position:relative;isolation:isolate;overflow:hidden;padding:0;color:#fff;
+  background:radial-gradient(60% 70% at 72% 40%,#0c3550 0%,transparent 70%),var(--ls-night)}
+.hx-bg-lines{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;fill:none;stroke:#7fc9bd;stroke-width:1;opacity:.45}
+.hx-bg-lines circle{fill:#7fd3c5;stroke:none}
+.living-science .living-grid{display:grid;grid-template-columns:minmax(560px,1fr) minmax(0,1.05fr) 150px;min-height:640px;align-items:center;gap:0;position:relative;z-index:2}
+
+/* ---------- Copy ---------- */
+.living-science .living-hero .hero-copy{padding:56px 0 40px;z-index:3;transform:translateY(var(--ls-text-y,0px))}
+.living-science .hx-eyebrow{display:flex;align-items:center;gap:18px;font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:#a1c8c8;margin:0 0 30px -36px}
+.hx-eyebrow-line{display:block;width:22px;height:1px;background:#a1c8c8;transform-origin:left}
+.living-science .living-hero h1{font-size:clamp(52px,5.2vw,80px);line-height:1.04;letter-spacing:-.05em;margin:0}
+.living-science .living-hero h1 .ls-title-line{display:block;white-space:nowrap}
+.living-science .living-hero h1 em{color:var(--ls-mint-2);font-style:italic;font-weight:400;font-size:1.04em;letter-spacing:-.04em;padding-right:.08em}
+.living-science .living-hero .hero-copy>p:not(.hx-journey){max-width:400px;margin-top:28px;font-size:15px;line-height:1.75;color:#c0d2df}
+.living-science .living-hero .actions{display:flex;align-items:center;gap:30px;margin-top:30px;flex-wrap:wrap}
+.living-science .living-hero .hx-primary{display:inline-flex;align-items:center;gap:28px;min-height:56px;padding:0 30px;text-decoration:none;background:var(--ls-mint);color:var(--ls-night);border:0;border-radius:2px;font-weight:600;
+  transition:transform .35s var(--ls-ease),box-shadow .35s ease,background .35s ease}
+.living-science .living-hero .hx-primary:hover{background:#d4f6ea;transform:translateY(-2px);box-shadow:0 10px 26px #7fd3c526}
+.hx-textlink{position:relative;display:inline-flex;align-items:center;gap:28px;padding:10px 0;color:#fff;text-decoration:none;font-weight:600}
+.hx-textlink:after{content:'';position:absolute;left:0;right:0;bottom:2px;height:1px;background:#ffffffb0;transform-origin:left;transition:transform .45s var(--ls-ease)}
+.hx-textlink:hover:after{transform:scaleX(.55)}
+.living-science .living-hero .arrow{transition:transform .35s var(--ls-ease)}
+.living-science .living-hero a:hover .arrow{transform:translate(2px,-2px)}
+.hx-journey{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin:38px 0 0;font-size:9.5px;letter-spacing:.26em;text-transform:uppercase;color:#a9c4cc}
+.hx-journey i{font-style:normal;color:#7fd3c5}
+.living-science .living-hero a:focus-visible,.living-science .ls-motion:focus-visible{outline:3px solid #e4fff4;outline-offset:6px}
+
+/* ---------- Art ---------- */
+.ls-art{position:relative;min-width:0;margin:0 -16% 0 -14%;aspect-ratio:800/640;transform:translateY(var(--ls-art-y,0px)) scale(var(--ls-scale,1));transform-origin:50% 60%}
+.ls-depth{width:100%;height:100%;transform:translate(var(--ls-pointer-x,0px),var(--ls-pointer-y,0px));transition:transform .8s ease-out}
+.hx-sculpture{width:100%;height:100%;overflow:visible}
+.hx-helix{transform-box:view-box;transform-origin:490px 320px;animation:hx-sway 22s ease-in-out infinite alternate}
+.hx-orbits{transform-box:view-box;transform-origin:470px 330px;animation:hx-tilt 40s ease-in-out infinite alternate}
+.hx-node{transform-box:fill-box;transform-origin:center;animation:hx-breathe 9s ease-in-out infinite alternate;animation-delay:var(--d)}
+.hx-pulses path{stroke-dasharray:.06 .94;stroke-dashoffset:1;opacity:.75;animation:hx-current 9s linear infinite}
+.hx-pulses path:nth-child(3n){animation-duration:12s}.hx-pulses path:nth-child(3n+1){animation-duration:10.5s;animation-delay:-4s}
+.hx-particle{animation:hx-twinkle 8s ease-in-out infinite alternate;animation-delay:var(--d)}
+.hx-bubble{transform-box:fill-box;animation:hx-float 12s ease-in-out infinite alternate;animation-delay:var(--d)}
+.hx-halo{transform-box:fill-box;transform-origin:center;animation:hx-glow 10s ease-in-out infinite alternate}
+
+/* ---------- Subject rail ---------- */
+.hx-rail{position:relative;align-self:stretch;display:flex;flex-direction:column;justify-content:flex-start;gap:52px;padding:70px 0 0 0;z-index:3}
+.hx-rail:before{content:'';position:absolute;left:4.5px;top:0;bottom:-40px;width:1px;background:linear-gradient(#9bc9c400,#9bc9c455 12%,#9bc9c455 85%,#9bc9c400);transform-origin:top}
+.hx-rail a{position:relative;display:flex;align-items:center;gap:16px;color:#c9dbe0;text-decoration:none;font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;transition:color .6s ease}
+.hx-num{color:#8fb1b8;min-width:18px;transition:color .6s ease}
+.hx-dot{position:relative;width:10px;height:10px;border-radius:50%;border:1px solid #9bc9c4;background:var(--ls-night);transition:background .7s ease,border-color .7s ease,box-shadow .7s ease}
+.hx-rail a.is-active,.hx-rail a:hover{color:#fff}
+.hx-rail a.is-active .hx-num{color:var(--ls-mint)}
+.hx-rail a.is-active .hx-dot{background:var(--ls-mint);border-color:var(--ls-mint);box-shadow:0 0 0 5px #bdeedd1c}
+
+/* ---------- Bottom: scroll cue + wave ---------- */
+.hx-bottom{position:relative;z-index:4;display:flex;justify-content:flex-end;align-items:center;gap:24px;margin-top:-30px;padding-bottom:20px}
+.hx-scroll{display:flex;align-items:center;gap:18px;color:#d5e4e8;text-decoration:none;font-size:9.5px;letter-spacing:.26em;text-transform:uppercase}
+.hx-scroll>span:first-child{padding-right:18px;border-right:1px solid #9bc9c455;line-height:28px}
+.hx-scroll-btn{display:grid;place-items:center;width:40px;height:40px;border:1px solid #d5e4e8aa;border-radius:50%;font-size:15px;letter-spacing:0;transition:background .35s ease}
+.hx-scroll:hover .hx-scroll-btn{background:#ffffff14}
+.ls-motion{border:1px solid #76b2ae55;color:#b6d2d1;background:#08263c;min-height:36px;padding:6px 12px;font:10px Arial,sans-serif;letter-spacing:.04em;border-radius:3px;margin-right:auto;cursor:pointer}
+.ls-motion[hidden]{display:none}.ls-motion:hover{background:#123b4c}
+.hx-wave{position:relative;z-index:3;height:110px;margin-top:-70px;pointer-events:none}
+.hx-wave svg{position:absolute;left:-3%;width:106%;height:100%}
+.hx-wave-back{fill:#7fc9bd;opacity:.14;animation:hx-wave 18s ease-in-out infinite alternate}
+.hx-wave-front{fill:var(--ls-paper)}
+.living-science .living-intro{background:var(--ls-paper);position:relative}
+.living-science .living-intro .intro{transform:translateY(var(--ls-intro-y,0px))}
+
+/* ---------- Keyframes (all gentle) ---------- */
+@keyframes hx-sway{from{transform:translate(-4px,4px) rotate(-1.6deg)}to{transform:translate(4px,-4px) rotate(1.6deg)}}
+@keyframes hx-tilt{from{transform:rotate(-3deg)}to{transform:rotate(4deg)}}
+@keyframes hx-breathe{from{transform:translateY(-3px) scale(1)}to{transform:translateY(3px) scale(1.025)}}
+@keyframes hx-current{to{stroke-dashoffset:0}}
+@keyframes hx-twinkle{from{opacity:.15}to{opacity:.65}}
+@keyframes hx-float{from{transform:translateY(5px)}to{transform:translateY(-7px)}}
+@keyframes hx-glow{from{opacity:.75;transform:scale(.98)}to{opacity:1;transform:scale(1.03)}}
+@keyframes hx-wave{from{transform:translateX(-18px)}to{transform:translateX(18px)}}
+@keyframes hx-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+@keyframes hx-grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes hx-growY{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes hx-rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes hx-fade{from{opacity:0}to{opacity:1}}
+@keyframes hx-slide-in{from{opacity:0;transform:translateX(12px)}to{opacity:1;transform:none}}
+@keyframes hx-art-in{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:none}}
+@keyframes hx-draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+
+/* ---------- Entrance sequence: calm, staggered, once ---------- */
+@media(prefers-reduced-motion:no-preference){
+  .living-science .header .brand,.living-science .header .navlinks{animation:hx-fade .8s both}
+  .hx-eyebrow{animation:hx-fade .8s .1s both}
+  .hx-eyebrow-line{animation:hx-grow 1s .15s var(--ls-ease) both}
+  .living-hero .ls-title-line{animation:hx-rise 1s .22s var(--ls-ease) both}
+  .living-hero .ls-title-line:nth-child(2){animation-delay:.36s}
+  .living-hero .ls-title-line:nth-child(3){animation-delay:.5s}
+  .living-hero .hero-copy>p:not(.hx-journey){animation:hx-rise 1s .66s var(--ls-ease) both}
+  .living-hero .actions{animation:hx-rise 1s .8s var(--ls-ease) both}
+  .hx-journey>*{animation:hx-fade .9s both}
+  .hx-journey>:nth-child(1){animation-delay:1s}.hx-journey>:nth-child(2){animation-delay:1.15s}.hx-journey>:nth-child(3){animation-delay:1.3s}
+  .hx-journey>:nth-child(4){animation-delay:1.45s}.hx-journey>:nth-child(5){animation-delay:1.6s}
+  .living-hero .hx-sculpture{animation:hx-art-in 1.6s .3s var(--ls-ease) both}
+  .hx-strand{stroke-dasharray:1;animation:hx-draw 2.6s .45s ease-out both}
+  .hx-strand-2{animation-delay:.65s}
+  .hx-rungs,.hx-beads{animation:hx-fade 1.4s 1.6s both}
+  .hx-orbit{stroke-dasharray:1;animation:hx-draw 2.4s .8s ease-out both}
+  .hx-bonds path{stroke-dasharray:1;animation:hx-draw 1.4s 1s ease-out both}
+  .hx-bg-lines path{stroke-dasharray:1;animation:hx-draw 3s .4s ease-out both}
+  .hx-rail:before{animation:hx-growY 1.4s .6s var(--ls-ease) both}
+  .hx-rail a{animation:hx-slide-in .8s both}
+  .hx-rail a:nth-child(1){animation-delay:1s}.hx-rail a:nth-child(2){animation-delay:1.12s}.hx-rail a:nth-child(3){animation-delay:1.24s}.hx-rail a:nth-child(4){animation-delay:1.36s}
+  .hx-scroll{animation:hx-fade 1s 1.6s both}
+  .hx-scroll-btn{animation:hx-bob 2.8s 2.6s ease-in-out infinite}
+}
+
+/* Pause control / off-screen: freeze all hero loops */
+.living-hero.ls-paused *,.living-hero.ls-offscreen *{animation-play-state:paused!important}
+
+/* ---------- Responsive ---------- */
+@media(min-width:1500px){.living-science .living-grid{min-height:720px}}
+@media(max-width:1180px) and (min-width:761px){
+  .living-science .living-hero h1 .ls-title-line{white-space:normal}
+  .living-science .header .brand-tag{display:none}.living-science .header .navlinks{gap:19px}
+  .living-science .living-grid{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);min-height:580px}
+  .living-science .living-hero h1{font-size:clamp(46px,6vw,66px)}
+  .living-science .hx-eyebrow{margin-left:0}
+  .ls-art{margin:0 -12% 0 -6%}
+  .hx-rail{grid-column:1/-1;flex-direction:row;justify-content:flex-start;gap:34px;padding:0 0 10px}
+  .hx-rail:before{display:none}
+}
+@media(max-width:760px){
+  .living-science .living-hero h1 .ls-title-line{white-space:normal}
+  html.living-science .header,html.living-science .header.sm-glass-header{height:80px}
+  html.living-science .header.sm-header-scrolled,html.living-science .header.sm-header-scrolled .nav{transform:none}
+  html.living-science .header .brand img.header-logo{width:160px;height:49px}
+  .living-science .header .brand-tag{display:none}
+  .living-science .header .navlinks a{min-height:44px;display:flex;align-items:center}
+  .living-science .header .navlinks>a[aria-current="page"]:after{display:none}
+  .living-science .living-grid{display:flex;flex-direction:column;align-items:stretch;min-height:0}
+  .living-science .living-hero .hero-copy{padding:40px 0 8px;transform:none}
+  .living-science .hx-eyebrow{margin-left:0;font-size:9px;margin-bottom:22px}
+  .living-science .living-hero h1{font-size:clamp(44px,11vw,70px)}
+  .living-science .living-hero .hero-copy>p:not(.hx-journey){font-size:14px;margin-top:20px}
+  .living-science .living-hero .actions{gap:22px}
+  .hx-journey{margin-top:28px;font-size:8.5px;gap:9px;letter-spacing:.18em}
+  .ls-art{width:min(100%,440px);margin:0 auto;transform:none}
+  .hx-rail{flex-direction:row;flex-wrap:wrap;gap:12px 22px;padding:6px 0 0}
+  .hx-rail:before{display:none}
+  .hx-bottom{margin-top:16px;justify-content:space-between}
+  .hx-scroll>span:first-child{display:none}
+  .hx-wave{height:70px;margin-top:-20px}
+  .hx-node,.hx-particle,.hx-bubble{animation:none}
+  .hx-particle:nth-child(even){display:none}
+  .living-science .living-intro .intro{transform:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .living-science .living-hero *,.living-science .header *{animation:none!important;transition:none!important}
+  .living-science .ls-art,.living-science .ls-depth,.living-science .living-hero .hero-copy,.living-science .living-intro .intro{transform:none!important}
+  html.living-science .header{transition:none}.ls-motion{display:none}
+}
+@media print{.ls-motion,.hx-wave,.hx-bg-lines{display:none}.living-science .living-hero *{animation:none!important}}
+
+/* HYBRID GLASS ART STUDY — composited artwork + retained live orbital SVG.
+   Isolated to this hero preview; original SVG source remains editable. */
+.living-science .living-hero{
+ background:
+ radial-gradient(ellipse 47% 68% at 73% 41%, rgba(24,125,147,.28) 0%, rgba(9,60,84,.22) 43%,transparent 79%),
+ radial-gradient(ellipse 36% 55% at 92% 11%,rgba(22,88,114,.17),transparent 81%),
+ linear-gradient(113deg,#06182f 0%,#071e35 43%,#07263f 76%,#06182f 100%);
+}
+.living-science .living-hero:before{content:"";pointer-events:none;position:absolute;inset:0;z-index:0;opacity:.17;
+ background-image:linear-gradient(to right,rgba(137,219,213,.12) 1px,transparent 1px),linear-gradient(to bottom,rgba(137,219,213,.10) 1px,transparent 1px);background-size:95px 95px;mask-image:linear-gradient(90deg,transparent 13%,black 64%,transparent 100%);}
+.ls-art{margin:0 -24% 0 -19%;aspect-ratio:800/640;filter:none}
+.ls-depth{position:relative;isolation:isolate}
+.hx-glass-art{position:absolute;z-index:2;left:7%;top:-13%;width:90%;height:129%;object-fit:contain;pointer-events:none;
+ transform:translate3d(0,var(--hx-image-y,0px),0) scale(var(--hx-image-scale,1));transform-origin:53% 53%;
+ filter:drop-shadow(0 0 20px rgba(52,179,195,.15));}
+.hx-glass-backlight{position:absolute;inset:12% 3% 7% 0%;z-index:0;pointer-events:none;
+ background:radial-gradient(ellipse at 54% 49%,rgba(27,125,145,.3),transparent 54%);filter:blur(27px)}
+.hx-sculpture{position:relative;z-index:3;mix-blend-mode:screen}
+/* Preserve live SVG orbits and subtle particles; hide the duplicate illustrated model. */
+.hx-sculpture .hx-helix,.hx-sculpture .hx-bonds,.hx-sculpture .hx-nodes,.hx-sculpture .hx-halo,.hx-sculpture .hx-bubble{opacity:0}
+.hx-sculpture .hx-orbits{opacity:.43}
+.hx-sculpture .hx-orbit{stroke-width:.75;opacity:.54}
+.hx-sculpture .hx-particle{opacity:.58}
+.hx-sculpture .hx-pulses{opacity:.25}
+.living-science .living-grid{grid-template-columns:minmax(530px,1fr) minmax(0,1.11fr) 150px}
+.living-science .hx-bg-lines{opacity:.25}
+.living-science .hx-wave-back{opacity:.08}
+@media(max-width:1180px) and (min-width:761px){.living-science .living-grid{grid-template-columns:minmax(0,1.08fr) minmax(0,1fr)}.ls-art{margin:0 -10% 0 -8%}}
+@media(max-width:760px){.ls-art{width:min(100%,460px);margin:0 auto;aspect-ratio:800/640}.hx-glass-art{top:-13%;height:125%;width:94%;left:3%}.living-science .living-hero:before{opacity:.08}}
+@media(prefers-reduced-motion:reduce){.hx-glass-art{transform:none!important}}
+
+/* SciMind integrated motion pass — actual site sections retained. */
+:root {--ls-night:#06182f;--ls-paper:#f6f7f2}
+/* Correct shared header event (site.js/home.js already toggles scrolled classes). */
+html.living-science .header {height:100px;min-height:0;position:sticky;top:0;z-index:80;transition:height .38s cubic-bezier(.2,.7,.3,1),background-color .35s ease,box-shadow .35s ease,border-color .35s ease}
+html.living-science .header .nav {height:100%;transition:transform .35s ease}
+html.living-science .header.sm-header-scrolled,html.living-science .header.is-scrolled {height:78px;background:rgba(4,30,54,.91);box-shadow:0 7px 28px #00132330;transform:none}
+html.living-science .header.sm-header-scrolled .nav,html.living-science .header.is-scrolled .nav {transform:none}
+@supports (backdrop-filter:blur(12px)){html.living-science .header.sm-header-scrolled,html.living-science .header.is-scrolled{backdrop-filter:blur(16px)}}
+/* The source glass art is intentionally subdued while live orbital paths remain crisp. */
+.living-science .hx-glass-art {opacity:.79;filter:brightness(.77) saturate(.72) contrast(.96) drop-shadow(0 0 16px rgba(25,111,133,.08));mix-blend-mode:screen;mask-image:radial-gradient(ellipse 72% 66% at 52% 49%,#000 48%,rgba(0,0,0,.82) 70%,transparent 100%)}
+.living-science .hx-glass-backlight {opacity:.56}
+.living-science .hx-sculpture {opacity:.83}
+.living-science .living-hero {background:radial-gradient(ellipse 48% 75% at 74% 42%,rgba(14,83,102,.38) 0%,rgba(7,43,68,.25) 50%,transparent 82%),linear-gradient(112deg,#06162c 0%,#061d35 49%,#08283f 76%,#061a31 100%)}
+/* Change spacing only, never actual Welcome or programme card content. */
+.home-polished main .living-intro {padding-top:clamp(56px,6vw,88px);padding-bottom:clamp(38px,5vw,62px);background:var(--ls-paper)}
+.home-polished main .home-programmes {padding-top:clamp(40px,5vw,68px)}
+.home-polished .intro>div:last-child {padding-top:38px}
+.home-polished .home-programmes .section-head {margin-bottom:clamp(24px,3vw,38px)}
+.living-science .living-hero .hx-wave {transform:translateY(var(--sc-wave-shift,0px));will-change:transform}
+/* Consistent bounded scroll-linked effects; only transforms + opacity. */
+.living-science .living-hero .hero-copy {opacity:var(--sc-copy-opacity,1)}
+.living-science .ls-art {opacity:var(--sc-art-opacity,1)}
+.living-science .hx-bg-lines {transform:translate3d(0,var(--sc-lines-y,0px),0)}
+/* Reveal directions use the existing home.js observer, respecting the original content structure. */
+@keyframes sc-rise{from{opacity:0;transform:translate3d(0,25px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
+@keyframes sc-from-left{from{opacity:0;transform:translate3d(-25px,0,0)}to{opacity:1;transform:translate3d(0,0,0)}}
+@keyframes sc-from-right{from{opacity:0;transform:translate3d(25px,0,0)}to{opacity:1;transform:translate3d(0,0,0)}}
+@media(prefers-reduced-motion:no-preference){
+  .home-polished .living-intro .intro>div:first-child.home-reveal-enter,
+  .home-polished .teacher>div:first-child.home-reveal-enter,
+  .home-polished .collab-grid>div:first-child.home-reveal-enter{animation:sc-from-left .85s cubic-bezier(.2,.7,.2,1) var(--home-reveal-delay,0ms) both}
+  .home-polished .living-intro .intro>div:last-child.home-reveal-enter,
+  .home-polished .teacher>div:last-child.home-reveal-enter,
+  .home-polished .collab-grid>div:last-child.home-reveal-enter{animation:sc-from-right .85s cubic-bezier(.2,.7,.2,1) var(--home-reveal-delay,0ms) both}
+  .home-polished .section-head.home-reveal-enter,.home-polished .learning-steps.home-reveal-enter,.home-polished .learning-grid>div:first-child.home-reveal-enter{animation:sc-rise .75s cubic-bezier(.2,.7,.2,1) var(--home-reveal-delay,0ms) both}
+  .home-polished .program-card.sc-card-arrive {animation:sc-rise .7s cubic-bezier(.2,.7,.2,1) var(--sc-card-delay,0ms) both}
+}
+@media(max-width:760px){
+ html.living-science .header,html.living-science .header.sm-header-scrolled,html.living-science .header.is-scrolled{height:80px;transform:none}
+ .home-polished main .living-intro{padding-top:50px;padding-bottom:34px}
+ .home-polished main .home-programmes{padding-top:40px}
+ .home-polished .intro>div:last-child{padding-top:25px}
+ .living-science .hx-glass-art{opacity:.77;filter:brightness(.8) saturate(.76)}
+}
+@media(prefers-reduced-motion:reduce){.home-polished .program-card.sc-card-arrive{animation:none!important}.living-science .hx-glass-art{transform:none!important}.living-science .living-hero .hx-wave{transform:none!important}}
+
+/* V1.1 — Hero→Welcome handoff and full-bleed wave edge repair.
+   Kept separate from existing site-wide section styling. */
+.living-science .living-hero .hx-wave {
+  position: relative;
+  z-index: 5;
+  height: clamp(92px, 9vw, 140px);
+  margin-top: -78px;
+  margin-bottom: -1px;
+  width: 100%;
+  overflow: hidden;
+  transform: none;
+  pointer-events: none;
+}
+.living-science .living-hero .hx-wave svg {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: calc(100% + 2px);
+  transform: translateZ(0);
+}
+.living-science .living-hero .hx-wave-front {fill: var(--ls-paper);}
+.living-science .living-hero .hx-wave-back {opacity: .07;}
+/* Prevent one-pixel corner seams on fractional device pixel ratios. */
+.living-science .living-hero .hx-wave::after {
+  content: ''; position: absolute; bottom: -1px; left: 0; right: 0;
+  height: 3px; background: var(--ls-paper);
+}
+/* The wash activates gradually with real scroll position. It stays behind
+   navigation, artwork and copy, and doesn't block interactions. */
+.living-science .living-hero::after {
+  content: ''; position: absolute; z-index: 1; pointer-events: none;
+  left: 0; right: 0; bottom: 0; height: min(52%, 440px);
+  background: linear-gradient(to bottom,
+    transparent 0%, rgba(11,63,81,.22) 34%,
+    rgba(93,151,152,.18) 65%, rgba(246,247,242,.4) 100%);
+  opacity: var(--sc-transition-wash, 0);
+  transition: opacity .06s linear;
+}
+.living-science .living-hero .hx-wave-back {
+  transform: translate3d(var(--sc-wave-x,0px), 0, 0);
+  transform-origin: center bottom;
+}
+.living-science .living-intro {
+  z-index: 1;
+  margin-top: -1px;
+}
+.living-science .living-intro .intro {
+  transform: translate3d(0,var(--ls-intro-y,0px),0);
+  opacity: var(--sc-intro-opacity,1);
+}
+@media(max-width:760px){
+  .living-science .living-hero .hx-wave {height:76px;margin-top:-28px}
+  .living-science .living-intro .intro {transform:none;opacity:1}
+}
+@media(prefers-reduced-motion:reduce){
+  .living-science .living-hero::after {opacity:0!important}
+  .living-science .living-hero .hx-wave-back {transform:none!important}
+  .living-science .living-intro .intro {opacity:1!important;transform:none!important}
+}
+
+/* Three-part brand statement: single line on desktop and mobile. */
+.living-science .hx-journey{flex-wrap:nowrap;white-space:nowrap;gap:clamp(4px,1.1vw,14px);letter-spacing:clamp(.02em,.12vw,.2em);font-size:clamp(7px,.7vw,10px)}
+@media(max-width:420px){.living-science .hx-journey{gap:5px;font-size:7px;letter-spacing:0}}

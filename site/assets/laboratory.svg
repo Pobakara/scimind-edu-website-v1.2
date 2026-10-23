@@ -1,0 +1,60 @@
+<svg class="scene" viewBox="0 0 820 720" role="img" aria-label="Illustrated science laboratory with a microscope, glassware, molecular model and glowing scientific display" xmlns="http://www.w3.org/2000/svg">
+<defs>
+ <linearGradient id="floor" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#123c58"/><stop offset="1" stop-color="#08233c"/></linearGradient>
+ <linearGradient id="wall" x2="1" y2="1"><stop stop-color="#16415a"/><stop offset="1" stop-color="#0a293f"/></linearGradient>
+ <linearGradient id="glass" x2="1" y2=".4"><stop stop-color="#b2f0e8" stop-opacity=".55"/><stop offset=".45" stop-color="#74c5d3" stop-opacity=".08"/><stop offset="1" stop-color="#b8f3ee" stop-opacity=".35"/></linearGradient>
+ <linearGradient id="bench" x2="0" y2="1"><stop stop-color="#8cb4be"/><stop offset="1" stop-color="#305a70"/></linearGradient>
+ <linearGradient id="metal"><stop stop-color="#39667e"/><stop offset=".45" stop-color="#c0dfdc"/><stop offset="1" stop-color="#658b9a"/></linearGradient>
+ <radialGradient id="aura"><stop stop-color="#0b81a2" stop-opacity=".35"/><stop offset="1" stop-color="#0b81a2" stop-opacity="0"/></radialGradient>
+ <radialGradient id="sphere" cx=".3" cy=".25"><stop stop-color="#d9fff1"/><stop offset=".3" stop-color="#7bc7b7"/><stop offset="1" stop-color="#267b86"/></radialGradient>
+</defs>
+<ellipse cx="420" cy="350" rx="400" ry="330" fill="url(#aura)"/>
+<!-- architectural shell -->
+<path d="M88 464L412 272L746 459L423 658Z" fill="#031525"/>
+<path d="M88 447L412 258L746 443L423 637Z" fill="url(#floor)" stroke="#39627b"/>
+<path d="M88 447V225L412 42V258Z" fill="url(#wall)" stroke="#3b6c7e" stroke-opacity=".5"/>
+<path d="M412 42L746 228V443L412 258Z" fill="#0a2a41" stroke="#28546a"/>
+<path d="M88 225L412 42L746 228" fill="none" stroke="#91d6d3" stroke-width="2" opacity=".7"/>
+<g stroke="#367389" opacity=".22"><path d="M153 485L479 296M219 523L545 333M285 561L612 370M350 599L679 407M153 410L487 599M217 372L553 561M282 334L617 523M347 297L681 485"/></g>
+<!-- left windows -->
+<path d="M119 239L227 177V338L119 400Z" fill="#103d55" stroke="#40778a"/><path d="M130 245L216 195V325L130 375Z" fill="#18506a" opacity=".7"/>
+<path d="M172 217V352M130 310L216 260" stroke="#70a9b9" opacity=".5"/>
+<path d="M239 169L368 95V256L239 330Z" fill="#103d55" stroke="#40778a"/><path d="M250 175L357 114V243L250 305Z" fill="#18506a" opacity=".65"/><path d="M302 144V275M250 241L357 179" stroke="#70a9b9" opacity=".5"/>
+<!-- suspended light -->
+<path d="M422 57V117M612 162V222" stroke="#527c89"/><path d="M393 101L626 233L611 241L378 109Z" fill="#a6e5dc"/><path d="M378 109L611 241V247L378 115Z" fill="#549b9d"/>
+<!-- classroom screen -->
+<path d="M454 156L685 286V391L454 261Z" fill="#032138" stroke="#5c9caa" stroke-width="3"/>
+<path d="M464 173L675 291V373L464 255Z" fill="#0a354d"/>
+<g stroke="#79c9bc" fill="none" stroke-width="1.5"><path d="M482 206L503 206L525 238L546 239L568 269L590 271"/><path d="M481 226L504 237L524 222L547 254L569 253L590 287"/><path d="M493 211L493 232M514 221L514 232M536 242L536 244M557 254L557 259M580 273L580 269"/></g>
+<g fill="#8dd7cd"><circle cx="626" cy="308" r="6"/><circle cx="609" cy="280" r="4"/><circle cx="649" cy="306" r="4"/></g><path d="M626 308L609 280M626 308L649 306" stroke="#8dd7cd"/>
+<path d="M479 247L558 292M479 253L531 283" stroke="#3b8296" stroke-width="2"/>
+<!-- rear work surface -->
+<path d="M466 339L689 465L725 444L503 319Z" fill="#537d8a"/><path d="M466 339L689 465V477L466 352Z" fill="#21485f"/><path d="M485 363V418M675 470V515M713 453V497" stroke="#31576b" stroke-width="8"/>
+<!-- small test-tube rack -->
+<g transform="translate(565 331)"><path d="M0 24L62 60L79 50L18 15Z" fill="#6f9d9e"/><path d="M0 24V45L62 81V60M79 50V71L62 81" fill="none" stroke="#7da4a7" stroke-width="4"/><g fill="url(#glass)" stroke="#9cdbd8"><path d="M13 0V33Q18 44 23 39V6Z"/><path d="M33 12V45Q38 56 43 51V18Z"/><path d="M53 24V57Q58 68 63 63V30Z"/></g><path d="M15 23V34Q18 39 21 36V27M35 35V46Q38 51 41 48V39M55 47V58Q58 63 61 60V51" fill="#79c7b7"/></g>
+<!-- hero laboratory island -->
+<ellipse cx="385" cy="523" rx="205" ry="62" fill="#001623" opacity=".6"/>
+<path d="M212 417L433 542V608L212 483Z" fill="#254d63"/><path d="M433 542L585 454V520L433 608Z" fill="#15384f"/>
+<path d="M228 445L418 552M228 471L418 578M450 554L568 486" stroke="#507486" opacity=".55"/><path d="M306 493V554M510 518V557" stroke="#60889a"/>
+<path d="M180 392L344 296L611 447L446 544Z" fill="url(#bench)" stroke="#8fbac5"/>
+<path d="M180 392V407L446 560V544Z" fill="#3b657b"/><path d="M446 544L611 447V462L446 560Z" fill="#24495f"/>
+<path d="M186 392L446 539L604 448" fill="none" stroke="#b4d9d9" opacity=".65"/>
+<!-- microscope -->
+<path d="M262 398L323 432L370 405L309 371Z" fill="#153d57" stroke="#7597a7"/><path d="M262 398V406L323 440L370 413V405L323 432Z" fill="#2c556c"/>
+<path d="M325 402V335Q325 290 290 281" fill="none" stroke="#234b65" stroke-width="20"/><path d="M326 395V337Q326 300 301 289" fill="none" stroke="url(#metal)" stroke-width="12"/>
+<path d="M277 358L319 381L350 363L307 339Z" fill="#153e59" stroke="#7aa0af"/><path d="M300 351L320 362L329 357L309 346Z" fill="#bce6df" opacity=".7"/>
+<path d="M277 276L293 285L319 239L303 230Z" fill="url(#metal)" stroke="#729eaa"/><path d="M298 231L321 244L329 230L306 217Z" fill="#15364d" stroke="#81a8b2"/><path d="M278 283L292 291L286 307L271 299Z" fill="#b2d0cd"/><path d="M277 306L271 319" stroke="#b5d9d4" stroke-width="5"/>
+<circle cx="333" cy="333" r="12" fill="#082e49" stroke="#8cb3ba"/><circle cx="333" cy="333" r="5" fill="#74a8ae"/>
+<!-- front flask -->
+<g><path d="M437 363V393L412 424Q405 438 431 451Q454 463 474 449Q486 441 475 425L455 400V374Z" fill="url(#glass)" stroke="#a5dcd8" stroke-width="1.6"/><path d="M421 419L464 437L475 437Q482 446 463 451Q444 458 423 444Q409 435 421 419Z" fill="#4aafab" opacity=".8"/><path d="M437 363Q447 360 456 370Q455 378 437 369Z" fill="#92d6ce" opacity=".6"/><path d="M422 426L430 412M439 380V397" stroke="#d6f7ee" opacity=".6" stroke-width="3"/><circle class="pulse" cx="439" cy="432" r="3" fill="#d5fcdd"/><circle cx="455" cy="442" r="2" fill="#d5fcdd"/></g>
+<!-- beaker -->
+<path d="M486 386L522 407V442Q507 447 486 425Z" fill="url(#glass)" stroke="#9ccfcd"/><path d="M488 411L520 428V440Q507 443 488 424Z" fill="#2e97b4" opacity=".7"/><path d="M487 386Q505 387 522 407" fill="none" stroke="#c1e9df"/><path d="M511 413L517 416M511 419L517 422" stroke="#bde5db"/>
+<!-- notebook -->
+<path d="M337 438L375 416L411 437L373 460Z" fill="#aecbc5"/><path d="M373 460V464L411 441V437M337 438V442L373 464" fill="none" stroke="#4d7b89"/><path d="M349 437L376 422M355 441L382 426M361 445L388 430" stroke="#527b86" stroke-width="1"/>
+<!-- floating molecular model -->
+<g class="floating"><g stroke="#69a7b0" stroke-width="5"><path d="M616 175L669 151L696 199M669 151L659 104M616 175L590 134"/></g><circle cx="616" cy="175" r="22" fill="url(#sphere)"/><circle cx="669" cy="151" r="28" fill="url(#sphere)"/><circle cx="696" cy="199" r="16" fill="url(#sphere)"/><circle cx="659" cy="104" r="12" fill="#8fd8cf"/><circle cx="590" cy="134" r="10" fill="#428b9d"/></g>
+<!-- floating scientific annotations -->
+<g class="floating float-delay" opacity=".8"><path d="M119 156L119 122L207 72" fill="none" stroke="#5d9da9"/><circle cx="119" cy="156" r="3" fill="#a5e5d4"/><text x="212" y="73" fill="#93bfc5" font-family="monospace" font-size="10" letter-spacing="2">DISCOVER</text></g>
+<path d="M580 527L644 562H733" fill="none" stroke="#457e8d"/><circle cx="580" cy="527" r="3" fill="#8dd6c3"/><text x="658" y="552" fill="#96bfc4" font-family="monospace" font-size="9" letter-spacing="2">EXPLORE</text>
+<circle class="pulse" cx="725" cy="350" r="3" fill="#90e1cf"/><circle cx="170" cy="535" r="2" fill="#64adad"/>
+</svg>

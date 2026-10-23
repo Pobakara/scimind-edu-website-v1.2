@@ -1,0 +1,40 @@
+# Secrets and environment-specific configuration
+.env
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.*
+*.pem
+*.key
+
+# Local tooling and generated folders
+node_modules/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.cache/
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs, temporary files and backups
+*.log
+*.tmp
+*.bak
+*.backup
+*~
+
+# Development archives and unrelated working files
+local-archive/
+development-notes/
+screenshots-private/
+private-testimonials/
+
+# Note: documentation in the root README.md is intentionally tracked.
+# Historical .md files and .py utilities belong outside the repository.

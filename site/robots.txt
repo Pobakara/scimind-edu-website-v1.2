@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /api/enquiries
+
+Sitemap: https://scimind.com.au/sitemap.xml

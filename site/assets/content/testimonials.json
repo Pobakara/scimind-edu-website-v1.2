@@ -1,0 +1,49 @@
+{
+  "testimonials": [
+    {
+      "id": "bio-student",
+      "quote": "I am truly blessed to have a teacher like you who is not only patient but can encourage and motivate me at my lowest.",
+      "attribution": "VCE Biology student",
+      "context": "On patience and encouragement",
+      "image": "",
+      "approved": true,
+      "placeholder": false
+    },
+    {
+      "id": "chemistry-parent",
+      "quote": "She really like the way u teach her.",
+      "attribution": "Parent of a Chemistry student",
+      "context": "Excerpt assembled from consecutive messages; original wording retained",
+      "image": "",
+      "approved": true,
+      "placeholder": false
+    },
+    {
+      "id": "sac-student",
+      "quote": "I had the SAC today, it was my last SAC of this term and it went well. Thank you for your support.",
+      "attribution": "VCE student",
+      "context": "On SAC preparation and support",
+      "image": "",
+      "approved": true,
+      "placeholder": false
+    },
+    {
+      "id": "student-gratitude",
+      "quote": "Teacher thank you so much I couldn't have done it without your support",
+      "attribution": "Student",
+      "context": "On encouragement and support",
+      "image": "",
+      "approved": true,
+      "placeholder": false
+    },
+    {
+      "id": "olympiad-achievement",
+      "quote": "He was very happy with the result. Thank you very much for all your help and support in preparing [him] for the test.",
+      "attribution": "Parent of a Year 7–8 science student",
+      "context": "Junior Science Olympiad · Credit Award (2026)",
+      "image": "",
+      "approved": true,
+      "placeholder": false
+    }
+  ]
+}

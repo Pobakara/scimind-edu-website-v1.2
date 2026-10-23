@@ -1,0 +1,36 @@
+/* Shared sticky header. Homepage and other page content stay unchanged. */
+html.sm-sticky-header{scroll-padding-top:var(--sm-header-offset,117px)}
+.header.sm-glass-header{position:sticky;top:0;z-index:80;background:#041e36;border-bottom:1px solid #ffffff20;transition:background-color .25s ease,border-color .25s ease,box-shadow .25s ease}
+html .header.sm-glass-header.sm-header-scrolled{background:#041e36;border-bottom-color:#b9e6d73d;box-shadow:0 5px 20px #0017291a}
+@supports ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  html .header.sm-glass-header.sm-header-scrolled{background:rgba(4,30,54,.86);-webkit-backdrop-filter:blur(16px) saturate(125%);backdrop-filter:blur(16px) saturate(125%)}
+}
+.header.sm-glass-header a:focus-visible,.header.sm-glass-header button:focus-visible{outline:3px solid #b9e6d7;outline-offset:5px}
+@media(max-width:760px){
+  html.sm-sticky-header{scroll-padding-top:var(--sm-header-offset,101px)}
+  .header.sm-glass-header .navlinks{background:#041e36;max-height:calc(100dvh - var(--sm-header-height,85px));overflow-y:auto;overscroll-behavior:contain}
+}
+@media(prefers-reduced-motion:reduce){.header.sm-glass-header{transition:none}}
+@media print{.header.sm-glass-header{display:none}}
+
+/* Launch refinement: same header proportions on every page. */
+.header.sm-glass-header {height:100px; min-height:0}
+.header.sm-glass-header .nav {height:100%;gap:24px}
+.header.sm-glass-header .brand {flex:0 0 auto;min-width:0;gap:12px}
+.header.sm-glass-header .brand img.header-logo {width:190px;height:60px;object-fit:contain;object-position:left center}
+.header.sm-glass-header .brand-tag {white-space:nowrap;font-size:8px;letter-spacing:.065em;line-height:1.2;padding-left:12px}
+.header.sm-glass-header .navlinks {gap:clamp(14px,2vw,28px);flex:0 0 auto}
+.header.sm-glass-header .navlinks>.button {border:1px solid #91c9bd80;background:#b9e6d70b;border-radius:2px;padding:13px 20px}
+.header.sm-glass-header.sm-header-scrolled {height:78px}
+.header.sm-glass-header .navlinks>a[aria-current="page"]:after {bottom:-8px}
+@media(max-width:1160px){.header.sm-glass-header .brand-tag{display:none}}
+@media(max-width:760px){
+ .header.sm-glass-header,.header.sm-glass-header.sm-header-scrolled{height:80px}
+ .header.sm-glass-header .brand img.header-logo{width:160px;height:49px}
+ .header.sm-glass-header .brand-tag{display:none}
+ .header.sm-glass-header .navlinks>a[aria-current="page"]:after{display:none}
+}
+/* Direct-call links on every footer. */
+.site-footer .sf-phone-links{display:flex;flex-direction:column;gap:7px;margin:10px 0 15px;font-size:13px}
+.site-footer .sf-phone-links a{display:inline-block;width:fit-content;color:#d3e7e5;text-decoration:underline;text-decoration-color:#b9e6d760;text-underline-offset:4px}
+.site-footer .sf-phone-links a:hover{color:#fff}

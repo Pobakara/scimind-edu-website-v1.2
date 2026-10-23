@@ -1,0 +1,3 @@
+Optional approved portrait: nisa-portrait.webp (recommended 800 × 900 pixels).
+After placing this image here, rebuild with build.py; every teacher placeholder is replaced automatically.
+No real student photos are required. The laboratory and programme graphics are original code-based illustrations.
