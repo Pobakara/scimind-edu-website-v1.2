@@ -4,12 +4,28 @@
   const cfg = () => window.SCIMIND_ENQUIRY || {};
   const isLocal = () => ['localhost','127.0.0.1'].includes(location.hostname);
   function endpoint() {
-    const c=cfg();
-    if(!c.enabled || !c.turnstileSiteKey || !c.endpoint) throw new Error('configuration');
-    const u=new URL(c.endpoint, location.href);
-    const sameOrigin=u.origin===location.origin && (u.protocol==='https:' || isLocal());
-    const localWorker=isLocal() && u.protocol==='https:' && /^[-a-z0-9]+\.[-a-z0-9]+\.workers\.dev$/i.test(u.hostname);
-    if(!(sameOrigin||localWorker) || u.pathname!=='/api/enquiries') throw new Error('configuration');
+    const c = cfg();
+
+    if (!c.enabled || !c.turnstileSiteKey || !c.endpoint) {
+      throw new Error('configuration');
+    }
+
+    const u = new URL(c.endpoint, location.href);
+
+    const sameOrigin =
+      u.origin === location.origin &&
+      (u.protocol === 'https:' || isLocal());
+
+    // Explicitly allow SciMind's existing Cloudflare Worker.
+    const trustedWorker =
+      u.protocol === 'https:' &&
+      u.hostname === 'scimind-enquiries.pobakara.workers.dev' &&
+      u.origin === 'https://scimind-enquiries.pobakara.workers.dev';
+
+    if (!(sameOrigin || trustedWorker) || u.pathname !== '/api/enquiries') {
+      throw new Error('configuration');
+    }
+
     return u.href;
   }
   let turnstilePromise;
