@@ -115,6 +115,7 @@
         if(result.kind==='rate-limited'){feedback('Too many attempts. Please wait before retrying or email SciMind.');return;}
         if(result.kind==='invalid'){feedback('The service could not accept these details. Please review them or contact us by email.');return;}
         if(result.kind!=='accepted')throw new Error('unconfirmed');
+        window.SciMindAnalytics?.generateLead('quick_enquiry');
         form.reset();lastPayload='';requestId='';
         feedback('Thank you. Your enquiry has been received by SciMind. Reference: '+result.reference+'.',true);
       } catch {feedback('We could not confirm receipt. Your details are still here. Please email info@scimind.com.au before retrying if uncertain whether it arrived.');}

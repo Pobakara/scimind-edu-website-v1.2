@@ -43,7 +43,7 @@
       sending=true;btn.disabled=true;form.setAttribute('aria-busy','true');status.textContent='Sending your enquiry…';
       const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),15000);
       try{const result=await api.submit(data,token,requestId,controller.signal);
-        if(result.kind==='accepted'){form.reset();requestId='';lastData='';feedback('Thank you! SciMind has received your enquiry. Reference: '+result.reference+'.',true);}
+        if(result.kind==='accepted'){window.SciMindAnalytics?.generateLead('contact');form.reset();requestId='';lastData='';feedback('Thank you! SciMind has received your enquiry. Reference: '+result.reference+'.',true);}
         else if(result.kind==='rate-limited')feedback('Too many attempts. Please try later or email SciMind.');
         else feedback('The enquiry could not be accepted. Please check the details or contact us by email.');
       }catch{feedback('We could not confirm receipt. Please email info@scimind.com.au before retrying if uncertain whether it arrived.');}

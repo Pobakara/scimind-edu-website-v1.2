@@ -1,0 +1,119 @@
+.sm-analytics-banner {
+  position: fixed;
+  z-index: 1001;
+  right: max(20px, env(safe-area-inset-right, 0px));
+  bottom: max(20px, env(safe-area-inset-bottom, 0px));
+  left: max(20px, env(safe-area-inset-left, 0px));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  max-width: 980px;
+  margin-inline: auto;
+  padding: 22px 24px;
+  border: 1px solid #ffffff35;
+  background: #041e36;
+  box-shadow: 0 12px 40px #041e3666;
+  color: #fff;
+}
+
+.sm-analytics-banner[hidden] {
+  display: none;
+}
+
+.sm-analytics-content {
+  max-width: 590px;
+}
+
+.sm-analytics-banner h2 {
+  margin: 0 0 7px;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+
+.sm-analytics-banner p {
+  margin: 0;
+  color: #c0d0dd;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.sm-analytics-banner a {
+  color: #b9e6d7;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.sm-analytics-status:not([hidden]) {
+  margin-top: 8px;
+  color: #ffd7a3;
+}
+
+.sm-analytics-actions {
+  display: grid;
+  flex: 0 0 auto;
+  grid-template-columns: repeat(2, minmax(132px, 1fr));
+  gap: 10px;
+  width: max-content;
+}
+
+.sm-analytics-choice {
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid #b9e6d7;
+  border-radius: 0;
+  background: transparent;
+  color: #fff;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.sm-analytics-choice:hover {
+  background: #0b81a2;
+}
+
+.sm-analytics-choice:focus-visible,
+.sm-cookie-settings:focus-visible {
+  outline: 3px solid #b9e6d7;
+  outline-offset: 3px;
+}
+
+.site-footer .sf-nav .sm-cookie-settings {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 6px 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.65;
+  text-align: left;
+  cursor: pointer;
+}
+
+.site-footer .sf-nav .sm-cookie-settings:hover {
+  color: #fff;
+}
+
+@media (max-width: 640px) {
+  .sm-analytics-banner {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 14px;
+    padding: 18px;
+  }
+
+  .sm-analytics-actions {
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .sm-analytics-choice {
+    padding-inline: 8px;
+  }
+}
