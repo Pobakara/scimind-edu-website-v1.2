@@ -73,8 +73,8 @@ html.home-polished{--home-header-offset:117px;scroll-padding-top:var(--home-head
 .partner-card{display:flex;flex-direction:column;scroll-snap-align:start;scroll-margin-inline:4px;min-width:0;background:#e7ede2;border:1px solid #d0dcc8;padding:20px;transition:background-color .2s ease}
 .partner-card:hover,.partner-card:focus-visible{background:#dce7d6}
 .partner-number{font-size:9px;letter-spacing:.12em;color:#4f664b}
-.partner-card svg{width:65px;height:65px;color:#517151;margin:24px 0 18px;transition:transform .3s ease}
-.partner-card:hover svg{transform:translateX(3px)}
+.partner-card>svg{width:65px;height:65px;color:#517151;margin:24px 0 18px;transition:transform .3s ease}
+.partner-card:hover>svg{transform:translateX(3px)}
 .partner-card h4{font-size:19px;line-height:1.3;font-weight:500;letter-spacing:-.025em;margin:0;min-height:50px;color:#253f2d}
 .partner-card p{font-size:11px;color:#50614b;margin:12px 0 22px;flex:1}
 .partner-link{display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid #b6c5ac;padding-top:14px;font-size:11px;color:#344e38}
@@ -225,7 +225,7 @@ html.home-polished{--home-header-offset:101px}
 html.home-polished{scroll-behavior:auto}
 .home-polished main *,.home-polished main *:before,.home-polished main *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 .home-polished .header{transition:none}
-.home-polished .program-card .art svg,.home-polished .program-card .arrow,.home-polished main .text-link>span,.partner-card svg,.stories-ready .story-panel{transform:none!important}
+.home-polished .program-card .art svg,.home-polished .program-card .arrow,.home-polished main .text-link>span,.partner-card>svg,.stories-ready .story-panel{transform:none!important}
 }
 @media print{.home-polished .home-reveal-enter{animation:none}.rail-controls,.stories-navigation,.story-wing,.learning-path{display:none!important}.home-polished .program-grid,.partner-grid{display:grid;grid-template-columns:1fr 1fr;grid-auto-flow:row;overflow:visible}.stories-ready .stories-stage{display:block;transform:none;left:auto;width:88%;margin:auto}.stories-ready .story-panel:not(.is-active){display:none}.story-panel{background:white;color:var(--ink)}.story-panel p,.story-kind{color:var(--ink)}}
 

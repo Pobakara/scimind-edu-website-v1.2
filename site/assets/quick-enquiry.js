@@ -31,7 +31,7 @@
         <p class="sm-quick-privacy">Your information will be used to respond to your enquiry. See our <a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.</p>
         <label class="sm-form-consent"><input type="checkbox" name="privacy" required> I have read the Privacy Policy and agree to SciMind using these details to respond to my enquiry.</label>
         <div class="sm-turnstile" id="quick-turnstile" aria-label="Security verification"></div>
-        <button type="submit" class="sm-quick-submit">Send enquiry <span aria-hidden="true">↗</span></button>
+        <button type="submit" class="sm-quick-submit">Send enquiry <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg></span></button>
         <p class="sm-quick-status" role="status" aria-live="polite" aria-atomic="true" tabindex="-1"></p>
       </form>
       <p class="sm-quick-alternative">Or email <a href="mailto:info@scimind.com.au">info@scimind.com.au</a><br>Prefer to call? <a href="tel:+61490090701">0490 090 701</a> or <a href="tel:+61494147205">0494 147 205</a></p>`;
@@ -118,7 +118,7 @@
         form.reset();lastPayload='';requestId='';
         feedback('Thank you. Your enquiry has been received by SciMind. Reference: '+result.reference+'.',true);
       } catch {feedback('We could not confirm receipt. Your details are still here. Please email info@scimind.com.au before retrying if uncertain whether it arrived.');}
-      finally {clearTimeout(timeout);widget.reset();sending=false;submit.disabled=false;fields.forEach(name=>form.elements[name].disabled=false);submit.innerHTML='Send enquiry <span aria-hidden="true">↗</span>';form.setAttribute('aria-busy','false');}
+      finally {clearTimeout(timeout);widget.reset();sending=false;submit.disabled=false;fields.forEach(name=>form.elements[name].disabled=false);submit.innerHTML='Send enquiry <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg></span>';form.setAttribute('aria-busy','false');}
     });
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();

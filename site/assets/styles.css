@@ -165,3 +165,27 @@ em{color:#367e75}.hero h1 em,.learning h2 em,.cta h2 em,.page-hero h1 em{color:#
     animation: none;
   }
 }
+
+/* Consistent arrow icons across all browsers */
+.arrow-icon {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  vertical-align: middle;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.arrow-icon.arrow-small {
+  width: 11px;
+  height: 11px;
+  flex-basis: 11px;
+}
+.arrow-icon.arrow-control {
+  width: 20px;
+  height: 20px;
+  flex-basis: 20px;
+}

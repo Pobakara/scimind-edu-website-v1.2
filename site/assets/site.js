@@ -151,7 +151,7 @@ function initSciMind() {
         else if(result.kind==='rate-limited'){status.textContent='Too many attempts. Please wait before trying again, or contact us by email or phone. Your details are still here.';status.className='form-failure';}
         else {status.textContent='Online enquiries are not connected yet. Your enquiry has not been sent. Please email or call us.';status.className='form-failure';}
       } catch {status.textContent='We could not confirm receipt of your enquiry. Your details are still here. Please contact info@scimind.com.au or 0490 090 701 before retrying if you are unsure whether it arrived.';status.className='form-failure';}
-      finally{clearTimeout(timeout);sending=false;submit.disabled=false;submit.innerHTML='Send enquiry <span aria-hidden="true">↗</span>';form.setAttribute('aria-busy','false');status.focus();}
+      finally{clearTimeout(timeout);sending=false;submit.disabled=false;submit.innerHTML='Send enquiry <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg></span>';form.setAttribute('aria-busy','false');status.focus();}
     });
     cleanups.push(()=>controller?.abort());
   }

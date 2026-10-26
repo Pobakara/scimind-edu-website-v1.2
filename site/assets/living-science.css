@@ -298,7 +298,7 @@ html.living-science .header.sm-header-scrolled .nav,html.living-science .header.
 }
 @media(prefers-reduced-motion:reduce){.home-polished .program-card.sc-card-arrive{animation:none!important}.living-science .hx-glass-art{transform:none!important}.living-science .living-hero .hx-wave{transform:none!important}}
 
-/* V1.1 — Hero→Welcome handoff and full-bleed wave edge repair.
+/* V1.1 — Hero-to-Welcome handoff and full-bleed wave edge repair.
    Kept separate from existing site-wide section styling. */
 .living-science .living-hero .hx-wave {
   position: relative;
