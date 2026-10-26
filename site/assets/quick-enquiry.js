@@ -28,7 +28,7 @@
         </div>
         <div class="sm-quick-field"><label for="sm-q-message">Message <span>(optional)</span></label><textarea id="sm-q-message" name="message" maxlength="3000" rows="3" placeholder="Which topics or learning goals would you like support with? Please avoid sensitive student information." aria-describedby="sm-q-message-error"></textarea><span id="sm-q-message-error" class="sm-quick-error"></span></div>
         <div class="sm-quick-trap" aria-hidden="true"><label for="sm-q-website">Leave blank</label><input id="sm-q-website" name="website" tabindex="-1" autocomplete="off" maxlength="200"></div>
-        <p class="sm-quick-privacy">Your information will be used to respond to your enquiry. See our <a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.</p>
+        <p class="sm-quick-privacy">Your information will be used to respond to your enquiry. See our <a href="/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.</p>
         <label class="sm-form-consent"><input type="checkbox" name="privacy" required> I have read the Privacy Policy and agree to SciMind using these details to respond to my enquiry.</label>
         <div class="sm-turnstile" id="quick-turnstile" aria-label="Security verification"></div>
         <button type="submit" class="sm-quick-submit">Send enquiry <span aria-hidden="true"><svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg></span></button>

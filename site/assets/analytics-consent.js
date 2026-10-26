@@ -102,7 +102,7 @@
   const description = document.createElement('p');
   description.textContent = 'Allow optional Google Analytics to help us understand how visitors use the site. Analytics stays off unless you choose to accept.';
   const privacyLink = document.createElement('a');
-  privacyLink.href = 'privacy.html#analytics';
+  privacyLink.href = '/privacy#analytics';
   privacyLink.textContent = 'Learn more';
   description.append(' ', privacyLink);
   bannerStatus = document.createElement('p');
