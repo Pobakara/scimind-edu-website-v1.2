@@ -36,5 +36,8 @@ development-notes/
 screenshots-private/
 private-testimonials/
 
+#zip files
+site.zip
+
 # Note: documentation in the root README.md is intentionally tracked.
 # Historical .md files and .py utilities belong outside the repository.
