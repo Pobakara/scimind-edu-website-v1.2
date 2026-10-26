@@ -144,7 +144,7 @@ html.home-polished{--home-header-offset:117px;scroll-padding-top:var(--home-head
 .story-wing{padding:32px 26px;background:#e7eeea;border-top:1px solid #bacdc3;color:#46635c;min-height:285px;align-self:center;overflow:hidden}
 .story-wing-before{text-align:right}
 .story-wing .wing-label{font-size:9px;line-height:1.7;letter-spacing:.12em;text-transform:uppercase}
-.story-wing p{font:italic 23px/1.5 Georgia,serif;margin-top:34px;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.story-wing p{font:italic 23px/1.5 Georgia,serif;margin-top:34px;display:-webkit-box;line-clamp:4;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
 .story-wing[hidden]{display:none}
 .stories-navigation{max-width:800px;display:flex;justify-content:space-between;align-items:center;gap:24px;margin-top:26px}
 .stories-navigation[hidden]{display:none}
@@ -209,7 +209,7 @@ html.home-polished{--home-header-offset:101px}
 .partner-grid{grid-auto-columns:68%;gap:12px}.partner-card{padding:22px}.partner-card h4{font-size:23px;min-height:60px}
 .home-polished .learning-intro>p{font-size:15px;max-width:440px}.learning-path{margin-top:22px}
 .learning-steps{min-height:0}.learning-step summary{grid-template-columns:32px minmax(0,1fr) 20px;gap:14px;padding:24px 0}.learning-step h3{font-size:22px}.step-body{padding:0 20px 26px 46px}
-.home-polished .teacher-visual{min-height:0;aspect-ratio:5/4;max-height:460px}.home-polished .teacher-monogram{font-size:160px}
+.home-polished .teacher-visual{min-height:0;aspect-ratio:4/5;max-height:none}.home-polished .teacher-visual>img{object-fit:cover;object-position:center top}.home-polished .teacher-monogram{font-size:160px}
 .home-polished .teacher-copy p{font-size:16px;margin:24px 0}
 .home-polished .collab-brand{border-right:0;border-bottom:1px solid #bdcbb8;padding:0 0 28px}.home-polished .collab-brand img{max-width:260px}.home-polished .collab-brand p{margin-top:18px}
 .stories-stage{margin-top:34px}
@@ -285,7 +285,7 @@ html.home-polished{scroll-behavior:auto}
 .home-polished .story-kind{font-size:9px}
 .home-polished .stories-ready .stories-stage{grid-template-columns:minmax(0,1fr) minmax(0,660px) minmax(0,1fr);width:min(1180px,calc(100% + 140px));gap:20px}
 .home-polished .story-wing{min-height:185px;padding:20px 18px}
-.home-polished .story-wing p{font-size:17px;margin-top:18px;-webkit-line-clamp:3}
+.home-polished .story-wing p{font-size:17px;margin-top:18px;line-clamp:3;-webkit-line-clamp:3}
 .home-polished .stories-navigation{max-width:660px;margin-top:12px}
 @media(max-width:700px){
  .home-polished .stories-stage{width:min(100%,520px)}

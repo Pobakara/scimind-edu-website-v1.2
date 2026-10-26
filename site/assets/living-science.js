@@ -74,7 +74,10 @@
     }
     if (control) {
       control.hidden = reduced.matches;
-      control.textContent = paused ? 'Resume motion' : 'Pause motion';
+      const label = paused ? 'Resume motion' : 'Pause motion';
+
+      control.setAttribute('aria-label', label);
+      control.setAttribute('title', label);
       control.setAttribute('aria-pressed', String(paused));
     }
     railLoop();

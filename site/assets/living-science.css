@@ -7,7 +7,7 @@ html.living-science{--ls-night:#041e36;--ls-mint:#bdeedd;--ls-mint-2:#a8dfcd;--l
 html.living-science .header,html.living-science .header.sm-glass-header{height:100px;background:var(--ls-night);border-bottom:1px solid #b9e6d718;box-shadow:none}
 html.living-science .header .nav{height:100%;gap:24px;transition:transform .35s ease}
 html.living-science .header .brand img.header-logo{width:190px;height:60px;object-fit:contain;object-position:left center}
-.living-science .header .brand-tag{font-size:8px;letter-spacing:.11em}
+/*.living-science .header .brand-tag{font-size:8px;letter-spacing:.11em}*/
 .living-science .header .navlinks{gap:28px}
 .living-science .header .navlinks>a[aria-current="page"]{position:relative}
 .living-science .header .navlinks>a[aria-current="page"]:after{content:'';position:absolute;left:0;right:0;bottom:-8px;height:2px;background:var(--ls-mint);border-radius:2px;transform-origin:left;animation:hx-grow .9s .5s var(--ls-ease) both}
@@ -75,7 +75,52 @@ html.living-science .header{transition:transform .35s ease,background .35s ease,
 .hx-scroll>span:first-child{padding-right:18px;border-right:1px solid #9bc9c455;line-height:28px}
 .hx-scroll-btn{display:grid;place-items:center;width:40px;height:40px;border:1px solid #d5e4e8aa;border-radius:50%;font-size:15px;letter-spacing:0;transition:background .35s ease}
 .hx-scroll:hover .hx-scroll-btn{background:#ffffff14}
-.ls-motion{border:1px solid #76b2ae55;color:#b6d2d1;background:#08263c;min-height:36px;padding:6px 12px;font:10px Arial,sans-serif;letter-spacing:.04em;border-radius:3px;margin-right:auto;cursor:pointer}
+.ls-motion {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  min-height: 40px;
+  padding: 0;
+  flex: 0 0 40px;
+  border: 1px solid #76b2ae88;
+  border-radius: 50%;
+  background: rgba(8, 38, 60, 0.72);
+  color: #b9e6d7;
+  cursor: pointer;
+  transition: background-color .2s ease, border-color .2s ease;
+}
+
+.ls-motion[hidden] {
+  display: none;
+}
+
+.ls-motion:hover {
+  background: #16485b;
+  border-color: #b9e6d7;
+}
+
+.ls-motion:focus-visible {
+  outline: 3px solid #b9e6d7;
+  outline-offset: 4px;
+}
+
+.ls-motion svg {
+  width: 19px;
+  height: 19px;
+}
+
+.ls-motion .ls-motion-play {
+  display: none;
+}
+
+.ls-motion[aria-pressed="true"] .ls-motion-pause {
+  display: none;
+}
+
+.ls-motion[aria-pressed="true"] .ls-motion-play {
+  display: block;
+}
 .ls-motion[hidden]{display:none}.ls-motion:hover{background:#123b4c}
 .hx-wave{position:relative;z-index:3;height:110px;margin-top:-70px;pointer-events:none}
 .hx-wave svg{position:absolute;left:-3%;width:106%;height:100%}
@@ -104,7 +149,7 @@ html.living-science .header{transition:transform .35s ease,background .35s ease,
 
 /* ---------- Entrance sequence: calm, staggered, once ---------- */
 @media(prefers-reduced-motion:no-preference){
-  .living-science .header .brand,.living-science .header .navlinks{animation:hx-fade .8s both}
+  /*.living-science .header .brand,.living-science .header .navlinks{animation:hx-fade .8s both}*/
   .hx-eyebrow{animation:hx-fade .8s .1s both}
   .hx-eyebrow-line{animation:hx-grow 1s .15s var(--ls-ease) both}
   .living-hero .ls-title-line{animation:hx-rise 1s .22s var(--ls-ease) both}
@@ -317,3 +362,12 @@ html.living-science .header.sm-header-scrolled .nav,html.living-science .header.
 /* Three-part brand statement: single line on desktop and mobile. */
 .living-science .hx-journey{flex-wrap:nowrap;white-space:nowrap;gap:clamp(4px,1.1vw,14px);letter-spacing:clamp(.02em,.12vw,.2em);font-size:clamp(7px,.7vw,10px)}
 @media(max-width:420px){.living-science .hx-journey{gap:5px;font-size:7px;letter-spacing:0}}
+
+/* Use the shared header layout consistently across all pages */
+html.living-science .header.sm-glass-header .brand-tag {
+  font-size: 8px;
+  letter-spacing: .11em;
+  line-height: 1.5;
+  padding-left: 14px;
+  white-space: nowrap;
+}

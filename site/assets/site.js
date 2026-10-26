@@ -181,14 +181,7 @@ if(typeof document!=='undefined')initSciMind();
 /* Shared sticky/glass header. Isolated from page CSS and existing menu handlers. */
 (() => {
   if(typeof document==='undefined' || document.querySelector('[data-sm-header-loader]'))return;
-  const source=document.currentScript;
-  if(!source || !source.src)return;
-  const stylesheet=document.createElement('link');
-  stylesheet.rel='stylesheet';
-  stylesheet.href=new URL('header.css',source.src).href;
-  stylesheet.setAttribute('data-sm-header-loader','');
-  document.head.append(stylesheet);
-  function initHeader(){
+   function initHeader(){
     const header=document.querySelector('.header');
     if(!header || header.classList.contains('sm-glass-header'))return;
     header.classList.add('sm-glass-header');
@@ -204,7 +197,7 @@ if(typeof document!=='undefined')initSciMind();
     window.addEventListener('pageshow',()=>{updateScroll();measure();});
     if('ResizeObserver' in window)new ResizeObserver(measure).observe(header);
     else window.addEventListener('resize',measure,{passive:true});
-    stylesheet.addEventListener('load',measure,{once:true});
+    //stylesheet.addEventListener('load',measure,{once:true});
     updateScroll();measure();
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initHeader,{once:true});
